@@ -69,5 +69,43 @@ angular.module('jobs').controller('JobsController', [
 				jobId: $stateParams.jobId
 			});
 		};
+    
+    $scope.filterOptions = {
+			job_types: [
+				{name: 'Show All'},
+				{name: 'Accounting'},
+				{name: 'Automotive'},
+        {name: 'Banking'},
+        {name: 'Construction'},
+        {name: 'Education'},
+        {name: 'Engineering'},
+        {name: 'General Business'},
+        {name: 'Human Resources'},
+        {name: 'Hotel'},
+        {name: 'Insurance'},
+        {name: 'Legal'},
+        {name: 'Manufacturing'},
+        {name: 'Marketing'},
+        {name: 'Other'},
+        {name: 'Retail'},
+        {name: 'Technology'},
+        {name: 'Telecommunications'},
+        {name: 'Transportation'}
+			]
+		};
+
+		$scope.filterItem = {
+			job_type: $scope.filterOptions.job_types[0]
+		}
+
+		$scope.customFilter = function(data){
+			if(data.job_type == $scope.filterItem.job_type.name){
+				return true;
+			} else if($scope.filterItem.job_type.name === 'Show All'){
+				return true;
+			} else {
+				return false;
+			}
+		}
 	}
 ]);
