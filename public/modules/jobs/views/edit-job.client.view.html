@@ -6,17 +6,49 @@
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <label class="control-label" for="company">Company</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="job.name" id="name" class="form-control" placeholder="Name" required>
+                        <input type="text" data-ng-model="job.company" id="company" class="form-control" placeholder="Comapny Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="title">Job Title</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="job.title" id="name" class="form-control" placeholder="Job Title" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="job_type">Job Type</label>
+                    <div class="controls">
+                       <select data-ng-model="job.job_type" id="job_type" class="form-control" required>
+                        <option value="0" selected>Select Job Type</option>
+                            <option value="Accounting">Accounting</option>
+                            <option value="Automotive">Automotive</option>
+                            <option value="Banking">Banking</option>
+                            <option value="Construction">Construction</option>
+                            <option value="Education">Education</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="General Business">General Business</option>
+                            <option value="Human Resources">Human Resources</option>
+                            <option value="Hotel">Hotel</option>
+                            <option value="Insurance">Insurance</option>
+                            <option value="Legal">Legal</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Other">Other</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Telecommunications">Telecommunications</option>
+                            <option value="Transportation">Transportation</option>
+                       </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Update" class="btn btn-default">
                 </div>
-				<div data-ng-show="error" class="text-danger">
-					<strong data-ng-bind="error"></strong>
-				</div>
+                <div data-ng-show="error" class="text-danger">
+                  <strong data-ng-bind="error"></strong>
+                </div>
             </fieldset>
         </form>
     </div>
